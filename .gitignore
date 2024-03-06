@@ -111,6 +111,8 @@ ipython_config.py
 
 # PEP 582; used by e.g. github.com/David-OConnor/pyflow and github.com/pdm-project/pdm
 __pypackages__/
+src/settings/local.py
+local.sqlite3
 
 # Celery stuff
 celerybeat-schedule
@@ -121,6 +123,7 @@ celerybeat.pid
 
 # Environments
 
+.env
 .venv
 env/
 venv/

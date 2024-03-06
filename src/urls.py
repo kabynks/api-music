@@ -6,6 +6,7 @@ from django.conf.urls.static import static
 urlpatterns = [
     path('admin/', admin.site.urls),
     path("api/", include("rest_framework.urls")),
+    path("api/dj-rest-auth/", include('dj_rest_auth.urls')),
     path("api/model/", include("apps.album.urls")),
     path("api/model/", include("apps.artist.urls")),
     path("api/model/", include("apps.music.urls")),
