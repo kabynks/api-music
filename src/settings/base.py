@@ -36,6 +36,7 @@ INSTALLED_APPS = [
     'dj_rest_auth',
     "image_optimizer",
     "django_cleanup",
+
 ]
 
 MIDDLEWARE = [
