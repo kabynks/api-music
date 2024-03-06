@@ -2,7 +2,7 @@ from rest_framework.routers import DefaultRouter
 
 from .views import ArtistViewSet
 
-router=DefaultRouter
+router=DefaultRouter()
 router.register('artist', ArtistViewSet, basename='artist')
 
 urlpatterns=[]
