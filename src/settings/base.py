@@ -36,14 +36,14 @@ INSTALLED_APPS = [
     'dj_rest_auth',
     "image_optimizer",
     "django_cleanup",
-    "cors-headers",
+
 
 ]
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     "whitenoise.middleware.WhiteNoiseMiddleware",
-    "corsheaders.middleware.CorsMiddleware",
+
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -54,17 +54,6 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'src.urls'
 
-CORS_ALLOWED_ORIGINS = [
-    'localhost:3000',
-    'localhost:8000',
-    'localhost:5173',
-]
-
-CSRF_TRUSTED_ORIGINS = [
-    'localhost:3000',
-    'localhost:8000',
-    'localhost:5173',
-]
 
 TEMPLATES = [
     {
