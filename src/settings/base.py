@@ -36,8 +36,7 @@ INSTALLED_APPS = [
     'dj_rest_auth',
     "image_optimizer",
     "django_cleanup",
-
-
+    'corsheaders',
 ]
 
 MIDDLEWARE = [
@@ -45,6 +44,7 @@ MIDDLEWARE = [
     "whitenoise.middleware.WhiteNoiseMiddleware",
 
     'django.contrib.sessions.middleware.SessionMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
@@ -71,7 +71,7 @@ TEMPLATES = [
     },
 ]
 REST_FRAMEWORK = {
-    
+
     "DEFAULT_AUTHENTICATION_CLASSES": [
         "rest_framework.authentication.TokenAuthentication"
     ]
@@ -87,7 +87,11 @@ STORAGES = {
 }
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
-
+CORS_ALLOWED_ORIGINS = [
+    'localhost:3000',
+    "localhost:8000",
+    "localhost:5173"
+]
 
 
 
