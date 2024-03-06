@@ -1,5 +1,4 @@
 
-WSGI config for src project.
 
 import os
 
