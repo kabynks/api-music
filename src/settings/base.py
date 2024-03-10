@@ -1,4 +1,5 @@
 import os
+from datetime import timedelta
 from pathlib import Path
 from decouple import config
 
@@ -97,7 +98,10 @@ CORS_ALLOWED_ORIGINS = [
     "http://localhost:5173"
 ]
 
-
+SIMPLE_JWT = {
+    "ACCESS_TOKEN_LIFETIME": timedelta(seconds=7200),
+    "REFRESH_TOKEN_LIFETIME": timedelta(days=3)
+}
 
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators
