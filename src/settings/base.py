@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     "image_optimizer",
     "django_cleanup",
     'corsheaders',
+    'rest_framework_simplejwt',
 ]
 
 MIDDLEWARE = [
@@ -73,7 +74,10 @@ TEMPLATES = [
 REST_FRAMEWORK = {
 
     "DEFAULT_AUTHENTICATION_CLASSES": [
-        "rest_framework.authentication.TokenAuthentication"
+        "rest_framework.authentication.BaseAuthentication",
+        "rest_framework.authentication.SessionAuthentication",
+        "rest_framework.authentication.TokenAuthentication",
+        'rest_framework_simplejwt.authentication.JWTAuthentication',
     ]
 }
 
