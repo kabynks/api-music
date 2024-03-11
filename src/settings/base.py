@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     "django_cleanup",
     'corsheaders',
     'rest_framework_simplejwt',
+    'drf_spectacular',
 ]
 
 MIDDLEWARE = [
@@ -75,11 +76,14 @@ TEMPLATES = [
 REST_FRAMEWORK = {
 
     "DEFAULT_AUTHENTICATION_CLASSES": [
-        "rest_framework.authentication.BaseAuthentication",
         "rest_framework.authentication.SessionAuthentication",
         "rest_framework.authentication.TokenAuthentication",
         'rest_framework_simplejwt.authentication.JWTAuthentication',
-    ]
+    ],
+    "DEFAULT_PERMISSION_CLASSES": [
+        "rest_framework.permissions.IsAuthenticatedOrReadOnly",
+    ],
+    'DEFAULT_SCHEMA_CLASS': 'drf_spectacular.openapi.AutoSchema',
 }
 
 WSGI_APPLICATION = 'src.wsgi.application'
@@ -101,6 +105,12 @@ CORS_ALLOWED_ORIGINS = [
 SIMPLE_JWT = {
     "ACCESS_TOKEN_LIFETIME": timedelta(seconds=7200),
     "REFRESH_TOKEN_LIFETIME": timedelta(days=3)
+}
+
+SPECTACULAR_SETTINGS = {
+    'TITLE': 'api-music project',
+    'DESCRIPTION': 'This is API of music',
+    'VERSION': '1.0.0',
 }
 
 # Password validation
