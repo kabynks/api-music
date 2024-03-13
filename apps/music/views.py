@@ -6,6 +6,6 @@ from .serializers import MusicSerializer
 logger = logging.getLogger("main")
 
 class MusicViewSet(ModelViewSet):
-    logger.warning("music")
+    logger.info("music")
     queryset=Music.objects.all()
     serializer_class=MusicSerializer
