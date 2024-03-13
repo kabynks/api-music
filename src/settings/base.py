@@ -2,8 +2,6 @@ import os
 from datetime import timedelta
 from pathlib import Path
 from decouple import config
-import logging
-
 BASE_DIR = Path(__file__).resolve().parent.parent.parent
 
 # Quick-start development settings - unsuitable for production
@@ -89,34 +87,34 @@ REST_FRAMEWORK = {
 
 WSGI_APPLICATION = 'src.wsgi.application'
 
-LOGGING = {
-    'version': 1,
-    'disable_existing_loggers': False,
-    'formatters': {
-        "main_format": {
-            "format": "{asctime} - {levelname} - {module} - {filename} - {message}",
-            "style": "{",
-        }
-    },
-    'handlers': {
-        'console': {
-            "class": "logging.StreamHandler",
-            "formatter": "main_format"
-        },
-        "file": {
-            "class": "logging.FileHandler",
-            "formatter": "main_format",
-            "filename": "logs.log"
-            }
-        },
-    'loggers': {
-        'main': {
-            "handlers": ["console", "file"],
-            'level': 'INFO',
-            'propagate': True
-            }
-        }
-    }
+# LOGGING = {
+#     'version': 1,
+#     'disable_existing_loggers': False,
+#     'formatters': {
+#         "main_format": {
+#             "format": "{asctime} - {levelname} - {module} - {filename} - {message}",
+#             "style": "{",
+#         }
+#     },
+#     'handlers': {
+#         'console': {
+#             "class": "logging.StreamHandler",
+#             "formatter": "main_format"
+#         },
+#         "file": {
+#             "class": "logging.FileHandler",
+#             "formatter": "main_format",
+#             "filename": "logs.log"
+#             }
+#         },
+#     'loggers': {
+#         'main': {
+#             "handlers": ["console", "file"],
+#             'level': 'INFO',
+#             'propagate': True
+#             }
+#         }
+#     }
 
 
 STORAGES = {
